@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            text-align:center;
+        }
+        #title{
+            font-size:30px;
+        }
+        .sentence{
+            color:red;
+            display:inline-block;
+            font-size:21px;
+        }
+        .apple{
+            float:left;
+        }
+    </style>
+    <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yjh.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+</script>
+</head>
+<body>
+    <div id="content">
+        <div id="title">
+        <h1>{{ object.title }}</h1>
+        </div>
+        <div>
+            <p><div class="sentence">Description:</div> {{ object.description }}</p>
+            <p><div class="sentence">Create Date:</div> {{ object.create_date }}</p>
+            <p><div class="sentence">Modify Date:</div> {{ object.modify_date }}</p>
+            <img src="{{ object.image.url }}" width="600" height="600">
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+</body>
+</html>
