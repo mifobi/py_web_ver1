@@ -51,6 +51,9 @@
 <body>
 <div id="content">
     <h1 id="title">Blog<span id="title_small">made with Django</span></h1>
+    <a href="{% url 'blog_create' %}">
+        <button>Create</button>
+    </a>
     {% for post in object_list %}
     <div class="box">
         <p class="box_title"><a href="{% url 'blog_detail' post.id %}">{{ post.title }}</a></p>

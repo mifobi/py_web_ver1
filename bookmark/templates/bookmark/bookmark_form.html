@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bookmark{
+            text-align:center;
+            height:100px;
+            line-height: 100px;
+            margin-top:100px;
+        }
+        .color{
+            height:40px;
+            color:DarkCyan;
+            text-shadow: -16px -10px 4px #000000;
+        }
+        .color-1{
+            width:300px;
+            margin-top:80px;
+            background-color:LightCyan;
+            color:DarkCyan;
+            height:100px;
+            font-size: 30px;
+-webkit-box-shadow: -32px -24px 15px 15px rgba(0,0,0,0.73);
+box-shadow: -32px -24px 15px 15px rgba(0,0,0,0.73);
+        }
+        .title{
+            color:DarkCyan;
+            text-shadow: -21px -26px 4px #000000;
+        }
+    </style>
+</head>
+<body>
+<div class="bookmark">
+    <div class="title">
+    <h1>If you want Create/Update</h1>
+    </div>
+    <div class="bookmark-2">
+<form method="post" action=".">{% csrf_token %}
+    <div class="color">
+        {{ form.title.label_tag }} {{ form.title }}
+    </div>
+    <div class="color">
+        {{ form.url.label_tag }} {{ form.url }}
+    </div>
+    <button type="submit" class="color-1">CREATE/UPDATE</button>
+</form>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<style>
+    .line{
+        font-size:70px;
+    }
+    .col-md-6{
+        width:1000px;
+    }
+    p{
+        width:800px;
+    }
+    .part-4{
+        font-size:30px;
+    }
+    .only-float{
+        float:right;
+        font-size:100px;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+                <div class="line">About... Company <a href="#" class="a-color"><span class="
+glyphicon glyphicon-th"></span></a></div>
+            <div class="part-1">
+                <h1>Our purpose?</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <div class="only-float"><span class="glyphicon glyphicon-sunglasses"></span></div>
+            </div>
+            <div class="part-2">
+                <h1>Introduce Comapany</h1>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+            </div>
+            <div class="part-3">
+                <h1>useful information for foreigners!</h1>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                <div class="only-float"><span class="glyphicon glyphicon-jpy"></span></div>
+            </div>
+            <div class="part-4">
+            <h1>Download our program!</h1>
+                <div><a href="#">download for windows 10 64bit</a>
+                    <span class="glyphicon glyphicon-save"></span>
+                    <div><a href="#">download for windows 10 32bit</a>
+                        <span class="glyphicon glyphicon-save"></span></div>
+                    <div><a href="#">download for mac</a>
+                        <span class="glyphicon glyphicon-save"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endblock content %}
