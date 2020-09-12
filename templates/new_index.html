@@ -1,103 +1,121 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load staticfiles %}
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <title>Hello, world</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nanum+Gothic&display=swap" rel="stylesheet">
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <title>DLAB DM4</title>
     <style>
-        body {
-            font-family: 'Pacifico', cursive;
-            background-color:black;
+        body{
+          font-family: 'Lato','Nanum Gothic', sans-serif;
+          background-color: black;
         }
-        .title {
-        font-size: 3vw;
-        font-family: 'Pacifico', cursive;
+        .menu{
+          font-size: 3vw;
+          font-family: 'Lato','Nanum Gothic', sans-serif;
         }
-        .made {
-        font-size:3vw;
-        font-family: 'Pacifico', cursive;
-        }
-        .menu {
-        font-size:3vw;
-        font-family: 'Pacifico', cursive;
+        .title{
+          font-family: 'Lato','Nanum Gothic', sans-serif;
+          font-size: 3vw;
         }
         .auth_menu{
-        font-size:3vw;
-        font-family: 'Pacifico', cursive;
+          font-size: 3vw;
+          font-family: 'Lato','Nanum Gothic', sans-serif;
         }
-        .greet{
-        font-size: 3vw;
+        .greet_comment{
+          font-size: 3vw;
+          font-family: 'Lato','Nanum Gothic', sans-serif;
+        }
+        .made{
+          font-size: 3vw;
+          font-family: 'Lato','Nanum Gothic', sans-serif;
+        }
+        .made_by{
+          font-family: 'Lato','Nanum Gothic', sans-serif;
         }
         .sign_in_name{
-          font-family: 'Pacifico', cursive;
+          font-family: 'Lato','Nanum Gothic', sans-serif;
+          color: darkblue;
+        }
+        .and{
+          font-family: 'Lato','Nanum Gothic', sans-serif;
+          color: orangered;
+        }
+        #index_menu{
+          position: absolute;
+          top: 5%; left: 50%;
+          transform: translate(-50%, 0%);
+          color: white;
         }
         .index_a, .index_a:hover{
           text-decoration: none;
-          color:white;
-        ]
-        #index_menu{
-          position:absolute;
-          top:5%;
-          left:50%:
-          transform: translate(-50%, 0%);
-          color:white;
+          color: white;
         }
     </style>
-</head>
-<body>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-<br>
-<div class="container_fluid">
+  </head>
+  <body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <br>
+  <div class="container-fluid">
     <video autoplay muted loop width="100%;">
         <source src = "{% static 'video/FOREST.mp4' %}">
     </video>
-</div>
-<div class="container" id="index_menu">
+  </div>
+
+  <div class="container" id="index_menu">
     <br>
     {% if user.is_active %}
-    <div class="text-center greet">
-        Hello, <span class="sing_in_name">{{ user.get_username }}</span>
+    <div class="text-center greet_comment">
+      Hello, <span class="sign_in_name">{{ user.get_username }}</span>
     </div>
     <div class="row text-center">
-        <div class="col-md-6 auth_menu"><a href="{% url 'logout' %}" class="index_a">SIGN OUT</a></div>
-        <div class="col-md-6 auth_menu"><a href="{% url 'password_change' %}" class="index_a">PW CHANGE</a></div>
+      <div class="col-md-6 auth_menu"><a href="{% url 'logout' %}" class="index_a">SIGN OUT</a></div>
+      <div class="col-md-6 auth_menu"><a href="{% url 'password_change' %}" class="index_a">PASSWORD CHANGE</a></div>
     </div>
     {% else %}
-    <div class="text-center greet">
-        Welcome, <span class="sing_in_name">Anonymous</span>
+    <div class="text-center greet_comment">
+      Welcome, <span class="sign_in_name">Anonymous</span>
     </div>
     <div class="row text-center">
-        <div class="col-md-6 auth_menu"><a href="{% url 'login' %}" class="index_a">SIGN IN</a></div>
-        <div class="col-md-6 auth_menu"><a href="{% url 'register' %}" class="index_a">SIGN UP</a></div>
+      <div class="col-md-6 auth_menu"><a href="{% url 'login' %}" class="index_a">SIGN IN</a></div>
+      <div class="col-md-6 auth_menu"><a href="{% url 'register' %}" class="index_a">SIGN UP</a></div>
     </div>
     {% endif %}
     <br>
     <div class="row text-center title">
-        <div class="col-md-2"></div>
-        <div class="col-md-3"></div>
-        <div class="col-md-5">PROJECT</div>
-        <div class="col-md-2"></div>
+      <div class="col-md-12">WWW PROJECT</div>
     </div>
+    <br>
     <div class="row text-center made">
-        <div class="col-md-3"></div>
-        <div class="col-md-3">Made By</div>
-        <div class="col-md-3">WWW1</div>
-        <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+      <div class="col-md-3 made_by">Made By</div>
+      <div class="col-md-3"><span class="and">WWW</span></div>
+      <div class="col-md-3"></div>
     </div>
+    <br>
     <div class="row text-center menu">
-        <div class="col-md-3"><a href="{% url 'admin:index' %}" class="index_a">ADMIN</a></div>
-        <div class="com-md-3"><a href="{% url 'about_index' %}" class="index_a">ABOUT</a></div>
-        <div class="col-md-3"><a href="{% url 'bookmark_index' %}" class="index_a">BOOKMARK</a></div>
-        <div class="col-md-3"><a href="{% url 'blog_index' %}" class="index_a">BLOG</a></div>
+      <div class="col-md-3">
+        <a href="{% url 'admin:index' %}" class="index_a">ADMIN</a>
+      </div>
+      <div class="col-md-3">
+        <a href="{% url 'about_index' %}" class="index_a">ABOUT</a>
+      </div>
+      <div class="col-md-3">
+        <a href="{% url 'bookmark_index' %}" class="index_a">BOOKMARK</a>
+      </div>
+      <div class="col-md-3">
+        <a href="{% url 'blog_index' %}" class="index_a">BLOG</a>
+      </div>
     </div>
-</div>
-</body>
+  </div>
+  </body>
 </html>

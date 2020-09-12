@@ -1,94 +1,53 @@
 <!DOCTYPE html>
-<html>
+{% load staticfiles %}
+<html land="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-</head>
-<style>
-        .main_text {
-            font-family: 'Pacifico', cursive;
-            position:absolute;
-            text-align:center;
-            transform: translate(-50%, -50%);
-            color:white;
-            width:100%;
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nanum+Gothic&display=swap" rel="stylesheet">
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <title>DM4 PROJECT</title>
+    <style>
+        body{
+            font-family: 'Lato','Nanum Gothic', sans-serif;
+            margin: 0;
         }
-        #title {
-        left: 50%;
-        top: 20%;
-        font-size: 60px;
+        h1{
+            font-family: 'Lato','Nanum Gothic', sans-serif;
+            color: navy;
+            text-align: center;
+            font-size: 5em;
         }
-        #made {
-        left:50%;
-        top: 45%;
-        font-size: 25px;
+        .content{
+            position: fixed;
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            bottom: 300px;
+            padding: 50px;
         }
-        #menu {
-        left:50%;
-        top:35%;
-        font-size:30px;
+        h4{
+            font-family: 'Lato','Nanum Gothic', sans-serif;
+            color: orange
         }
-        li{
-        list-style:none;
-        display: inline-block;
-        margin-left:50px;
-        margin-right:50px;
-        font-size:40px;
-        }
-        a{
-        text-decoration: none;
-        color:white;
-        }
-        #dlab{
-        color:orangered;
-        }
-        #username{
-        color:green;
-        }
-        #auth1{
-        left: 50%;
-        top:10%;
-        }
-        #auth2{
-        left: 50%;
-        top:10%;
-        }
-        .auth_menu{
-        font-size:25px;
-        color:fuchsia;
-        }
-        .greet{
-        font-size: 25px;
-        }
-        .userID{
-        color: greenyellow;
-        font-size: 35px;
+        #myVideo{
+
         }
     </style>
+</head>
 <body>
-<iframe width="100%" height="1060" src="https://www.youtube.com/embed/s4Y_Xx6Mjs0?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h1 class="main_text" id="title">DJANGO FRAMEWORK</h1>
-    <h1 class="main_text" id="made">Made By
-        <span id="username">Ryan</span> &amp;
-        <span id="dlab">DLAB</span>
-    </h1>
-    <ul class="main_text" id="menu">
-    <li><a href="{% url 'admin:index' %}">ADMIN</a></li>
-    <li><a href="{% url 'bookmark_index' %}">BOOKMARK</a></li>
-    <li><a href="{% url 'blog_index' %}">BLOG</a></li>
-    </ul>
-{% if user.is_active %}
-<ul class="main_text" id="auth1">
-    <li><a class="auth_menu" href="{% url 'logout' %}">SIGN OUT</a></li>
-    <li><a class="auth_menu" href="{% url 'password_change' %}">PW CHANGE</a></li>
-</ul>
-{% else %}
-<ul class="main_text" id="auth2">
-    <p class="greet">Welcome, <strong class="userID">{{ user.get_username }}</strong></p>
-    <li><a class="auth_menu" href="{% url 'login' %}">SIGN IN</a></li>
-    <li><a class="auth_menu" href="{% url 'register' %}">SIGN UP</a></li>
-</ul>
-{% endif %}
+<a href="{% url 'about_index' %}">
+    <video autoplay muted loop id="myVideo">
+    <source src = "{% static 'video/FOREST.mp4' %}">
+    </video>
+</a>
+<a href="{% url 'about_index' %}">
+    <div class="content">
+        <h1>www project</h1>
+        <br>
+        <h4>WELCOME</h4>
+    </div>
+</a>
 </body>
 </html>

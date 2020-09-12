@@ -1,25 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
 <div class="container">
-    <form method="post" enctype="multipart/form-data">
-        <div class="form_row">
-            {{ form.title.label_tag }} {{ form.title }}
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form method="post" action="." enctype="multipart/form-data">{% csrf_token %}
+                <div class="row form-row">
+                    <div class="col-md-5">
+                        Title&nbsp;<span class="glyphicon glyphicon-pencil"></span>
+                    </div>
+                    <div class="col-md-7">{{ form.title }}</div>
+                </div>
+                <div class="row form-row">
+                    <div class="col-md-5">
+                        Image&nbsp;<span class="glyphicon glyphicon-picture"></span>
+                    </div>
+                    <div class="col-md-7">{{ form.image }}</div>
+                </div>
+                <div class="row form-row">
+                    <div class="col-md-5">
+                        Description&nbsp;<span class="glyphicon glyphicon-edit"></span>
+                    </div>
+                    <div class="col-md-7">{{ form.description }}</div>
+                </div>
+                <div>
+                    <button type="submit" class="btn form_btn">CREATE/UPDATE</button>
+                </div>
+            </form>
         </div>
-        <div class="form_row">
-            {{ form.image.label_tag }} {{ form.image }}
-        </div>
-        <div class="form_row">
-            {{ form.description.label_tag }} {{ form.description }}
-        </div>
-        <div class="form_row">
-            <button type="submit">Generate</button>
-        </div>
-    </form>
+        <div class="col-md-3"></div>
+    </div>
 </div>
-</body>
-</html>
+{% endblock content %}

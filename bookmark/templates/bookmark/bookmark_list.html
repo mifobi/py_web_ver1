@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bookmark List</title>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<title>Bookmark List</title>
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Raleway&display=swap" rel="stylesheet">
     <style>
         #content{
@@ -39,8 +38,6 @@
             background-color: rgba(255,20,147,0.1);
         }
     </style>
-</head>
-<body>
     <div id="content">
         <h1 id="title">
             최<span class="small">고로</span>
@@ -56,5 +53,4 @@
             {% endfor %}
         </ul>
     </div>
-</body>
-</html>
+{% endblock content %}
